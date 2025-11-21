@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="PortfolioCSS.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Goals</title>
+</head>
+<nav>
+        <label for="pageSelector">Select Page:</label>
+        <select id="pageSelector" onchange="window.location.href = this.value;">
+            <option value="CareerGoalsHTML.html">Career Goals</option>
+            <option value="ResumeHTML.html">Resume</option>
+            <option value="CoverLetterHTML.html">Cover Letter</option>
+        </select>
+    </nav>
+<body>
+
+    <header>
+    <div class="goalsname-container">
+        <div class="image-container">
+            <img src="20251004_121924.jpg" alt="Portrait" class="header-image">
+            <video src="20240528_233359_cm-chat-media-video-1_f62761cf-0cb1-4e67-8bc4-3da6cda276c3_13935_0_0.mp4" class="header-video" muted loop autoplay></video>
+            
+        </div>
+            <p>(hover cursor over picture for video)</p>
+            <h1>Parker Peterman</h1>
+            <h2>Data Analyst</h2>
+
+            <audio controls class="intro-audio">
+                <source src="Recording.m4a" type="audio/mpeg">
+            </audio>
+        </div>
+    </header>
+
+    <main>
+<section class="contact-from">
+    <h2>Get in Touch</h2>
+    <p>Fill out form below with accurate information.</p>
+
+    <form action="https://wp.zybooks.com/form-viewer.php" method="post">
+        <div class="form-group">
+            <label for="firstName">First Name: </label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name: </label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="companyName">Company Name: </label>
+            <input type="text" id="companyName" name="companyName">
+        </div>
+
+        <div class="form-group">
+            <label for="emailAddress">Email Address: </label>
+            <input type="email" id="emailAddress" name="emailAddress" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number: </label>
+            <input type="tel" id="phoneNumber" name="phoneNumber"> 
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message: </label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Best Contact Time:</label><br>
+            <label><input type="radio" name="contactTime" value="a.m." required> a.m.</label><br>
+            <label><input type="radio" name="contactTime" value="p.m." required> p.m.</label><br>
+            <label><input type="radio" name="contactTime" value="anytime" required> Anytime</label><br>
+        </div>
+
+        <div class="form-group">
+            <label>Preferred Contact Method:</label>
+            <select name="contactMethod" required>
+                <option value="phone">Phone</option>
+                <option value="email">Email</option>
+                <option value="text">Text</option>
+            </select>
+        </div>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</section>
+</main>
+
+</body>
+
+    <footer>
+        <hr>
+        <p>&copy; [<mark>2025</mark>] | Parker Peterman</p>
+        </span>
+    </footer>
+</html>
