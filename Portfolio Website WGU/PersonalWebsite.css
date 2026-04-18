@@ -1,0 +1,471 @@
+:root {
+    --bg-color: #020003;
+    --text-main: rgba(239, 194, 255, 0.8);
+    --text-muted: rgba(239, 194, 255 0.6);
+    --link-color: rgba(146, 57, 248, 0.8);
+    --trans-back: rgba(255, 255, 255, 0.35);
+    --particle-color: #efc2ff;
+
+    --font-size-h1: clamp(1.8rem, 8vw, 3rem);
+    --font-size-h2: clamp(1.5rem, 5vw, 2.2rem);
+    --font-size-body: clamp(0.9rem, 2vw, 1.1rem);
+}
+.light-mode {
+    --bg-color: hsl(60, 2%, 81%);
+    --text-main: #633913;
+    --link-color: rgba(78, 28, 5, 0.8);
+    --text-muted: #633813be; 
+    --trans-back: rgba(255, 255, 255, 0.15);
+    --particle-color: #633913;
+}
+
+#particles-js canvas {
+    filter: drop-shadow(0px 0px 5px var(--text-main)) blur(0.1px);
+    opacity: 0.8;
+}
+
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--text-main), #fff);
+    z-index: 9999;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 0 6px var(--text-main);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header-container i {
+    font-size: 2rem; 
+    color: var(--text-main); 
+    transition: all 0.3s ease; 
+}
+
+.github a:hover i {
+    color: #FE4C25;
+    text-shadow: 0 0 15px #FE4C25;
+    transform: scale(1.1); 
+}
+
+.linkedin a:hover i {
+    color: #0077b5;
+    text-shadow: 0 0 15px rgba(0, 119, 181, 0.7);
+    transform: scale(1.1);
+}
+
+.user-name {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+.user-name {
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .header-container {
+    flex-direction: column;
+    gap: 10px;
+    }
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+.page-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    min-height: 100dvh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+    scroll-snap-align: start; 
+}
+
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+header h1, header h3, header h4, .about-me h5, .education-title, .jobtitle, resume {
+    color: var(--text-main);
+}
+header {
+    text-align: center;
+    z-index: 10;
+    padding-top: 10vh;
+}
+
+header h1 {
+    font-size: var(--font-size-h1);
+    margin: 0;
+}
+
+header h4 {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    margin: 10px 0 0 0;
+    min-height: 1.2rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.image-container {
+    position: relative;
+    width: clamp(250px, 50vw, 400px);
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 35%;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(32, 3, 59, 0.5);
+    margin-top: 70px;
+    flex-shrink: 0;
+}
+
+.header-image, .header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.header-video {
+    opacity: 0;
+    z-index: 1;
+}
+
+.image-container:hover .header-image {
+    opacity: 0;
+}
+
+.image-container:hover .header-video {
+    opacity: 1;
+}
+.about-me {
+    flex: 1;
+    min-width: 300px;
+    max-width: 65ch;
+    color: var(--text-main);
+    margin-left: 20px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Forces stacking */
+        text-align: center;
+    }
+
+    .about-me {
+        margin-left: 0;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .about-me h5 {
+        font-size: 30px; /* Slightly smaller heading for mobile */
+        margin-bottom: 10px;
+    }
+}
+
+.about-me h5 {
+    font-size: var(--font-size-h1);
+    color: var(--text-main);
+    margin-bottom: -10px;
+}
+
+.about-me bold {
+    font-weight: bolder;
+}
+
+
+.theme-toggle {
+    width: 40%;
+    padding: 15px;
+    margin-top: 25px;
+    background: var(--text-main);
+    color: var(--bg-color);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.theme-toggle:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+
+.cert-section {
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.swiper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding-bottom: 50px;
+}
+
+.swiper h2 {
+    font-size: var(--font-size-h2);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cert-card {
+    background: var(--trans-back);
+    backdrop-filter: blur(3px);
+    border-radius: 60px;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cert-card img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.placeholder-icon {
+    font-size: var(--font-size-h1);
+    margin-bottom: 20px;
+}
+
+@media (min-width: 1024px) {
+    .swiper-wrapper {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        transform: none !important;
+        width: 100%;
+    }
+
+    .swiper-slide {
+        display: flex !important;
+        height: auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .swiper-pagination {
+        display: none !important;
+    }
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    list-style: none; 
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+resume, form, footer {
+    color: var(--text-muted);
+}
+
+resume {
+    display: block;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: var(--text-muted);
+}
+resume h2 {
+    font-weight: 1000;
+    color: var(--text-main);
+    margin-bottom: -6px;
+}
+resume bold {
+    font-weight: bolder;
+}
+
+.education-title, .jobtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+    .education-title, .jobtitle {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .education-title span, .jobtitle span {
+        font-size: 0.85rem; 
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-block {
+        padding: 20px 15px;
+    }
+    
+    resume, .contact-container {
+        padding: 15px;
+        width: 95%;
+    }
+}
+
+.education-title h3, .jobtitle h3 {
+    margin: 0;
+}
+
+form {
+    display: block;
+    max-width: 800px;
+    margin: 40px auto;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    padding: 0 20px;
+}
+form h2 {
+    font-weight: 1000;
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    box-sizing: border-box;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        width: 92%;        /* Slightly wider on very small screens */
+        padding: 15px;     /* Reduce internal padding to save space */
+    }
+
+    form h2 {
+        text-align: center; /* Ensures the 'Get In Contact' title is centered */
+        width: 100%;
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+input, textarea {
+    width:100%;
+    padding: 12px;
+    margin-top: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(1px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--text-main);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+footer {
+    margin-top: auto;
+    padding-bottom: 20px;
+    text-align: center;
+}
